@@ -1,10 +1,6 @@
 <?php
 require_once 'functions.php';
-$ssl = ssl();
-$app_url = ($ssl)
-          . "://".$_SERVER['HTTP_HOST']
-          . (dirname($_SERVER["SCRIPT_NAME"]) == DIRECTORY_SEPARATOR ? "" : "/")
-          . trim(str_replace("\\", "/", dirname($_SERVER["SCRIPT_NAME"])), "/");
+$app_url = appUrl();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,8 +12,8 @@ $app_url = ($ssl)
     <meta name="description" content="Ajax page request with jQuery" />
     <meta name="author" content="Anuoluwapo" />
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"> -->
-    <link rel="stylesheet" href="main.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   </head>
   <body>
     <main class="main">

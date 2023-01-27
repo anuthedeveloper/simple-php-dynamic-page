@@ -10,3 +10,12 @@ function ssl() {
 
     return $ssl;
 }
+
+
+function appUrl() {
+    $ssl = ssl();
+    return ($ssl)
+          . "://".$_SERVER['HTTP_HOST']
+          . (dirname($_SERVER["SCRIPT_NAME"]) == DIRECTORY_SEPARATOR ? "" : "/")
+          . trim(str_replace("\\", "/", dirname($_SERVER["SCRIPT_NAME"])), "/");
+}
